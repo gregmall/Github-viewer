@@ -1,0 +1,28 @@
+.Results {
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  
+  font-family: 'Righteous', cursive;
+  align-items: center;
+  img{
+    width: 250px;
+    height: auto;
+  }
+  ul{
+   display: grid;
+   grid-template-columns: repeat(6, 1fr);
+  }
+
+}
+.repo{
+  width: 200px;
+  border-radius: 6px;
+  margin: 5px;
+  padding: 2px;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
