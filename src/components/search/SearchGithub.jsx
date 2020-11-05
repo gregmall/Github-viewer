@@ -22,9 +22,6 @@ const SearchGithub = () => {
     dispatch(getProfile(userName))
     dispatch(fetchRepos(userName))
    
-   
-    
-    
   }
 const repo = useSelector(state => state.repos);
 console.log(repo)

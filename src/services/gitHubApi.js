@@ -12,9 +12,6 @@ export const getByName =(user) => {
 
     }))
     
-   
-    
-    
 };
 
 export const getUserRepos = (user) => {
@@ -23,7 +20,7 @@ export const getUserRepos = (user) => {
     .then(res=>res.json())
     .then(json => json.map(repo =>({
       name: repo.name,
-      url: repo.url
+      url: repo.html_url
 
 
     })));

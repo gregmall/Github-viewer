@@ -1,21 +1,99 @@
 import reducer from './GitHubReducer';
-import { setUser, setLoading } from '../actions/gitHubActions';
+import { setUser, setLoading, setRepos } from '../actions/gitHubActions';
 
 describe('GitHub reducer', () => {
   it('handles the GET_USER action', () => {
     const state = {
-      user: ''
+      userName: '',
+      profile: {},
+      loading: false,
+      repos: []
       
-    }
+    };
     const action = setUser(
-      
-     'gregmall'
-      
+       {
+        name: 'G.mall',
+        image: 'https://avatars1.githubusercontent.com/u/61127092?v=4',
+        followers: 5,
+        following: 8,
+        url: 'https://github.com/gregmall'
+      }
     );
+
     const newState = reducer(state, action);
 
     expect (newState).toEqual({
-      user: 'gregmall'
+      userName: '',
+      profile: {
+        name: 'G.mall',
+        image: 'https://avatars1.githubusercontent.com/u/61127092?v=4',
+        followers: 5,
+        following: 8,
+        url: 'https://github.com/gregmall'
+      },
+      loading: false,
+      repos: []
+    });
+
+  });
+  it('handles the SET_REPOS action', () =>{
+    const state = {
+      userName: 'gregmall',
+      profile: {
+        name: 'G.mall',
+        image: 'https://avatars1.githubusercontent.com/u/61127092?v=4',
+        followers: 5,
+        following: 8,
+        url: 'https://github.com/gregmall'
+      },
+      loading: false,
+      repos:[]
+      
+    }
+
+    const action = setRepos([
+      {
+        name: 'adventure-time',
+        url: 'www.url.com'
+      },
+      {
+        name: 'horned-creatures',
+        url: 'www.site.com'
+      },
+      {
+        name: 'quiz-game',
+        url: 'www.fun.com'
+      }
+
+    ]
+      
+    );
+    const newState = reducer(state, action);
+    expect (newState).toEqual({
+      userName: 'gregmall',
+      profile: {
+        name: 'G.mall',
+        image: 'https://avatars1.githubusercontent.com/u/61127092?v=4',
+        followers: 5,
+        following: 8,
+        url: 'https://github.com/gregmall'
+      },
+      loading: false,
+      repos: [
+        {
+          name: 'adventure-time',
+          url: 'www.url.com'
+        },
+        {
+          name: 'horned-creatures',
+          url: 'www.site.com'
+        },
+        {
+          name: 'quiz-game',
+          url: 'www.fun.com'
+        }
+
+      ]
     });
 
   });
@@ -33,14 +111,6 @@ describe('GitHub reducer', () => {
     });
 
   });
-  it('handles the SET_SEARCH action', () => {
-    const state = {
-      search: '',
-    };
-
-    const action = setSearch(
-      
-    )
-  });
+  
 
 });

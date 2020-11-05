@@ -14,11 +14,9 @@ const SearchedResults = () => {
   const repoElements =repos.map(repo=> (
     <li key={repo.name}>
       <p>NAME: {repo.name}</p>
-      <p><a href={repo.url}>LINK TO REPO</a></p>
+      <p><a href={repo.url} target="blank">LINK TO REPO</a></p>
     </li>
   ));
-
-  
 
 return(
 
