@@ -1,18 +1,19 @@
 .Results {
   background-color: aqua;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, auto);
   width: 100%;
   
   font-family: 'Righteous', cursive;
-  align-items: center;
+  
   img{
     width: 250px;
     height: auto;
   }
   ul{
-   display: grid;
-   grid-template-columns: repeat(6, 1fr);
+   display: flex;
+  flex-wrap: wrap;
+   
   }
 
 }
