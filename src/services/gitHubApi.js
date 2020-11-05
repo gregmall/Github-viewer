@@ -1,5 +1,5 @@
 export const getByName =(user) => {
-  console.log(user)
+
   return fetch(`https://api.github.com/users/${user}`)
     .then(res=>res.json())
     .then(profile  => ({
@@ -15,7 +15,7 @@ export const getByName =(user) => {
 };
 
 export const getUserRepos = (user) => {
-  console.log(user)
+
   return fetch(`https://api.github.com/users/${user}/repos`)
     .then(res=>res.json())
     .then(json => json.map(repo =>({

@@ -28,7 +28,7 @@ export const setRepos = repos => ({
 
 export const getProfile = userName => dispatch => {
   dispatch(setLoading(true));
-  console.log(userName)
+ 
   getByName(userName)
     .then(data => {
       dispatch(setUser(data))

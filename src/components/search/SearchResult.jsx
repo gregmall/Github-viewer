@@ -5,7 +5,7 @@ const SearchedResults = () => {
   const profile = useSelector(state=> state.profile);
   const loading = useSelector(state => state.loading);
   const repos = useSelector(state => state.repos);
-  console.log(repos)
+  
 
 
   if (loading) {

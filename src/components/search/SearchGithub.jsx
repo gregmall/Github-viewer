@@ -18,13 +18,12 @@ const SearchGithub = () => {
   const handleSubmit=(e)=>{
     e.preventDefault();
     
-    console.log(userName)
+    
     dispatch(getProfile(userName))
     dispatch(fetchRepos(userName))
    
   }
-const repo = useSelector(state => state.repos);
-console.log(repo)
+
 return(
 
   <form onSubmit ={handleSubmit}>
